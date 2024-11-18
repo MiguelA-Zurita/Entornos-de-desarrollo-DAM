@@ -64,10 +64,11 @@ def update_contact():
         except ValueError:
             print("The phone number must be numbers! Please type it correctly \n")
             update_contact()
-        while len(str(new_phone))>11 or len(str(new_phone))<9:
-            new_phone = input("Number incorrect, try to type it correctly again! \n")
-        my_contacts.update({searched_name:new_phone})
-        print("The contact has been updated \n")
+        else:
+            while len(str(new_phone))>11 or len(str(new_phone))<9:
+                new_phone = input("Number incorrect, try to type it correctly again! \n")
+            my_contacts.update({searched_name:new_phone})
+            print("The contact has been updated \n")
 
 
     start()
